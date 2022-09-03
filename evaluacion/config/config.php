@@ -1,5 +1,5 @@
 <?php
-define("DB_HOST", "sql106.byethost32.com");
-define("DB_USER", "b32_31406342");
-define("DB_PASS", "uadyumt2022");
-define("DB_NAME", "b32_31406342_db_exam");
+define("DB_HOST", "beq84ocjy8hyzol6ph3q-mysql.services.clever-cloud.com");
+define("DB_USER", "utpilyg2z0072wi4");
+define("DB_PASS", "Vy9Zl3A9ktLBOOIZ6CKi");
+define("DB_NAME", "beq84ocjy8hyzol6ph3q");
