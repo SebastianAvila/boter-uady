@@ -1,0 +1,95 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+ *{margin:0;padding:0;outline:none;color:white;background-color: rgb(21,23,44)}
+ body{font-family: 'Roboto', sans-serif}.phpcoding{width:900px; margin: 0 auto;background:#ddd}
+ .headeroption {
+  background: rgb(21,23,44) url("../img/banner.png") no-repeat scroll 0 0;
+  border-bottom: 2px solid #444444;
+  height: 100px;
+}
+.footeroption{background:rgb(21,23,44);color:#fff;text-align:center;padding:20px;}
+ .headeroption h2, .footeroption h2{margin:0;font-size:24px}
+.maincontent {
+  background-color: #C79316;
+  font-size: 18px;
+  min-height: 430px;
+  padding: 20px;
+}
+.success{
+  color:green;
+  display: block;
+  padding-bottom: 5px;}
+.error {
+  color: red;
+  display: block;
+  padding-bottom: 5px;
+}
+ p{margin:0}
+input[type="text"], input[type="password"] {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 238px;
+}
+input[type="submit"] {
+  background-color: #00102A;
+  display: inline-block;
+  padding: 6px;
+  width: 110px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+input[type="submit"]:hover{
+  color: white;
+  background-color: #C79316;
+}
+ .tblone{width:100%;border:1px solid #fff;margin:20px 0}
+ .tblone td{padding:5px 10px;text-align:center;}
+ table.tblone tr:nth-child(2n+1){background:#fff;height:30px;}
+ table.tblone tr:nth-child(2n){background:#f1f1f1;height:30px;}
+
+.main {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #999;
+  margin-top: 10px;
+  min-height: 368px;
+  padding: 15px;
+  width: 828px;
+}
+.main h1 {
+  background: #f4f4f4 none repeat scroll 0 0;
+  box-shadow: 2px 2px 0 1px #999;
+  color: black;
+  margin: 10px auto 25px;
+  padding: 4px;
+  text-align: center;
+  width: 820px;
+}
+.adminlogin {
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  margin: 65px auto 0;
+  padding: 35px;
+  width: 500px;
+}
+
+.adminlogin a{
+  background-color: white;
+  display: inline-block;
+  padding: 6px;
+  width: 100px;
+  border: 1px solid #00102A;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 16px;
+}
+
+.adminlogin a:hover{
+  background-color: #C79316;
+}

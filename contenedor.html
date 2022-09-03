@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Expresiones Regulares</title>
+	<link rel="stylesheet" href="estilos.css">
+	<link rel="stylesheet" href="css/all.min.css">
+	<link rel="stylesheet" href="estilosModals.css">
+	<link rel="stylesheet" href="estilosVideos.css">
+	<link rel="stylesheet" href="estilosActividades.css">
+	<link rel="shortcut icon" href="img/iconBOTER.png" type="image/x-icon">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="js/scriptMostrarArticles.js"></script>
+	<script src="js/scriptFuncionesGAlfabetos.js"></script>
+</head>
+
+<!-- EMPIEZA EL CUERPO DE MI PAGINA--------------------------------------------------- -->
+
+<body>
+
+	<div class="contenedorVertical"></div>
+
+	<!-- CREO UN CONTENEDOR------------------------------------------------------ -->
+
+	<div class="contenedor">
+		<audio id="clicsTab" src="audio/sonido.wav"></audio>
+		<audio id="clicsMenu" src="audio/clicMenu.wav"></audio>
+		<audio id="clicsRegresar" src="audio/clicRegresar.wav"></audio>
+		<audio id="clicsAnimaciones" src="audio/clicReproducir.wav"></audio>
+
+
+		<!-- CREO TAB DE NAVEGACIÓN PRINCIPAL----------------------------------------- -->
+		<ul class="tabs">
+			<li><a onclick="document.getElementById('clicsTab').play()" href="#tab1"><span
+						class="fas fa-home"></span><span class="tab-text">Inicio</span></a></li>
+			<li><a onclick="document.getElementById('clicsTab').play()" href="#tab2"><span
+						class="fas fa-bars"></span><span class="tab-text">Menú</span></a></li>
+			<li><a onclick="document.getElementById('clicsTab').play()" href="#tab3"><span
+						class="fas fa-users"></span><span class="tab-text">Créditos</span></a></li>
+			<li><a onclick="document.getElementById('clicsTab').play()" href="#tab4"><span
+						class="fas fa-wrench"></span><span class="tab-text">Opciones</span></a></li>
+		</ul>
+
+		<!-- EMPIEZA TODAS MIS SECCIONES------------------------------------------------------ -->
+
+		<div class="secciones">
+
+			<!-- SECCION INICIO------------------------------------------------ -->
+			<article id="tab1">
+				<h1>Bienvenida​</h1>
+				<p>Esta aplicación fue diseñada para apoyar el estudio de las Expresiones Regulares, como parte
+					fundamental de la Teoría de la Computación. Con ayuda del Menú principal puedes ir a las
+					secciones de Teoría, Ejemplos, Actividades y Evaluación. El sonido de fondo es opcional y
+					lo puedes configurar en el menú Opciones.</p>
+				<p>Esperamos que el contenido sea de utilidad para facilitar el aprendizaje y/o enriquecer los
+					conocimientos acerca del tema. Si tienes algún comentario o sugerencia, agradecemos que lo
+					envíes al correo que aparece en la sección de <b>Créditos</b>.</p>
+			</article>
+
+			<!-- SECCION MENU------------------------------------------------- -->
+			<article id="tab2">
+				<!-- CREO TAB DE NAVEGACIÓN MENU----------------------------------------- -->
+				<br>
+				<ul class="buttons">
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#button1"><span
+								class="fas fa-book"></span><span class="tab-text">Teoría</span></a></li>
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#button2"><span
+								class="fas fa-chalkboard"></span><span class="tab-text">Ejemplos</span></a></li>
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#button3"><span
+								class="fas fa-edit"></span><span class="tab-text">Actividades</span></a></li>
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#button4"><span
+								class="fas fa-clipboard"></span><span class="tab-text">Evaluación</span></a></li>
+				</ul>
+			</article>
+
+			<!-- SECCION CREDITOS----------------------------------------------- -->
+			<article id="tab3">
+				<h1>Créditos</h1>
+				<br>
+				<h4 align="center">Elaborado por:</h4>
+				<p id="autores">Br. Alejandro Emmanuel Canche Kú (Programación y Diseño web)</p>
+				<p id="autores">Br. Randy Josue Castro (Revisión Pedagógica y Animaciones)</p>
+				<h4 align="center">Diseño y coordinación general:</h4>
+				<p id="autores">MC. Cinthia Maribel González Segura <b>(gsegura@correo.uady.mx)</b></p>
+			</article>
+
+			<!-- SECCION OPCIONES------------------------------------------------- -->
+			<article id="tab4">
+				<h1>Música</h1>
+				<center><audio src="audio/musicaFondo.mp3" controls type="audio/mpeg" loop="true"></audio></center>
+			</article>
+
+			<!-- COMIENZA SECCIONES TAB DE NAVEGACIÓN DE MENU----------------------------------------- -->
+
+			<!-- SECCION TEORIA----------------------------------------- -->
+			<article id="button1">
+				<h1>Introducción</h1>
+				<p>Una Expresión Regular (ER) es una abreviatura que representa a todas las palabras que
+					forman parte de cierto Lenguaje Regular.</p>
+
+				<p>A partir de un Lenguaje Regular (LR) es posible obtener una ER que represente a todas las
+					palabras que lo conforman y no represente a las palabras que no forman parte de ese LR.</p>
+
+				<br>
+				<!-- CREO TAB DE NAVEGACIÓN MENU 2----------------------------------------- -->
+				<ul class="buttonsTeoria">
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#buttonT1"><span
+								class="tab-text">Operaciones con las ER</span></a></li>
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#buttonT2"><span
+								class="tab-text">Precedencia de los Operadores</span></a></li>
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#buttonT3"><span
+								class="tab-text">Condiciones para construir ER</span></a></li>
+				</ul>
+			</article>
+
+			<!-- SECCION EJEMPLOS----------------------------------------- -->
+
+			<article id="button2">
+				<h1>Ejemplos de Expresiones Regulares</h1>
+				<p>Bienvenido a la sección de ejemplos, aqui podrás encontrar algunas animaciones que te ayudarán a una
+					mejor comprensión de las Expresiones Regulares</p>
+				<ul class="buttonsEjER">
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#ejemplosER"><span
+								class="tab-text">Animaciones ER</span></a></li>
+				</ul>
+
+				<p>Te proporcionamos un generador de ER ya predefinidas para practicar</p>
+				<ul class="buttonsEjER">
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#alfabeto0"><span
+								class="tab-text">Generador ER</span></a></li>
+				</ul>
+			</article>
+
+			<!-- SECCION ACTIVIDADES----------------------------------------- -->
+			<article id="button3">
+				<h1>Actividades</h1>
+				<br>
+				<p>A continuación se te presenta una actividad a modo de cuestionario, para que puedas retroalimentarte
+					de lo visto en la sección de teoría y ejemplos</p>
+				<br>
+				<div id="buttonStart" class="start_btn">
+					<center><button>Comenzar</button></center>
+				</div>
+
+				<!-- Cuadro de información -->
+				<div class="info_box">
+					<div class="info-title"><span>Algunas reglas de esta actividad</span></div>
+					<div class="info-list">
+						<div class="info">1. Tendrá solo <span>15 segundos</span> para cada pregunta.</div>
+
+						<div class="info">2. Al seleccionar su respuesta, no se puede deshacer.</div>
+
+						<div class="info">3. No puede seleccionar ninguna opción una vez que pasa el tiempo.</div>
+
+						<div class="info">4. No puede salir del cuestionario mientras juega.</div>
+
+						<div class="info">5. Obtendrá puntos según sus respuestas correctas.</div>
+					</div>
+					<div class="buttons">
+						<button class="quit">Salir</button>
+						<button class="restart">Continuar</button>
+					</div>
+				</div>
+
+				<!-- Cuadro de preguntas -->
+				<div class="quiz_box">
+
+					<header>
+						<div class="title">Actividad ER</div>
+						<div class="timer">
+							<div class="time_left_txt">Tiempo -</div>
+							<div class="timer_sec">15</div>
+						</div>
+						<div class="time_line"></div>
+					</header>
+
+					<section>
+						<div class="que_text"></div>
+						<div class="option_list"></div>
+						<div id="divRetro" class="retro_alimentacion"></div>
+					</section>
+
+					<footer>
+						<div class="total_que">
+						</div>
+						<button class="retro_btn">Retroalimentación</button>
+						<button class="next_btn">Siguiente</button>
+					</footer>
+				</div>
+
+				<!-- Cuadro de resultados -->
+				<div id="box" class="result_box">
+					<div class="complete_text">¡Has completado el cuestionario!</div>
+					<div class="score_text"></div>
+					<div class="buttons">
+						<button class="restart">Reiniciar</button>
+						<button class="quit">Salir</button>
+					</div>
+				</div>
+			</article>
+
+			<!-- SECCION EVALUACIÓN----------------------------------------- -->
+			<article id="button4">
+				<h1 id="cintaH1">Evaluación</h1>
+				<br><br>
+				<center>
+					<h4>Acceso a estudiantes:</h4>
+				</center>
+				<br>
+				<center><a href="evaluacion/inicio.php" class="boton">Estudiantes</a></center>
+				<br>
+				<center>
+					<h4>Para acceder al panel administrativo:</h4>
+				</center>
+				<br>
+				<center><a href="evaluacion/admin/inicio.php" class="boton">Profesor</a></center>
+			</article>
+
+
+
+			<!-- COMIENZA SECCIONES TAB DE NAVEGACIÓN DE MENU-TEORIA-------------------------------- -->
+
+			<!-- SECCION OPERACIONES CON ER----------------------------------------- -->
+			<article id="buttonT1">
+				<h1>Operaciones con ER</h1>
+				<p>Las operaciones definidas para las ER son:</p>
+
+				<ul class="buttonsOER">
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#buttonO1"><span
+								class="tab-text">Unión</span></a></li>
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#buttonO2"><span
+								class="tab-text">Concatenación</span></a></li>
+					<li><a onclick="document.getElementById('clicsMenu').play()" href="#buttonO3"><span
+								class="tab-text">Cierre de estrella</span></a></li>
+				</ul>
+				<br>
+				<ul class="buttonsRegresar">
+					<li><a onclick="document.getElementById('clicsRegresar').play()" href="#button1"><span
+								class="fas fa-undo"></span><span class="tab-text">Regresar</span></a></li>
+				</ul>
+			</article>
+
+			<!-- SECCION PRECEDENCIA DE OPERADORES----------------------------------------- -->
+			<article id="buttonT2">
+				<h1>Precedencia de operadores</h1>
+				<p>
+					Se usan paréntesis para indicar la precedencia de las
+					operaciones, hay que tener en cuenta el siguiente
+					orden de precedencia :
+				</p>
+				<p>
+					1ª.- Uso de paréntesis
+					<br>
+					2ª.- Operación cierre y cierre positivo
+					<br>
+					3ª.- Operación concatenación
+					<br>
+					4ª.- Unión
+				</p>
+				<ul class="buttonsAnimaciones">
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir6"><span
+								class="fas fa-play"></span><span class="tab-text">Precedencia</span></a></li>
+				</ul>
+
+				<ul class="buttonsRegresar">
+					<li><a onclick="document.getElementById('clicsRegresar').play()" href="#button1"><span
+								class="fas fa-undo"></span><span class="tab-text">Regresar</span></a></li>
+				</ul>
+			</article>
+
+			<!-- SECCION CONDICIONES----------------------------------------- -->
+			<article id="buttonT3">
+				<h1>Condiciones</h1>
+
+				<p>
+					Completez: La ER debe aceptar a TODAS las palabras que
+					forman parte del lenguaje regular
+				</p>
+
+				<p>
+					Corrección: Las ER debe rechazar a TODA palabra que NO
+					forme parte del lenguaje regular.
+				</p>
+				<br>
+				<ul class="buttonsAnimaciones">
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir7"><span
+								class="fas fa-play"></span><span class="tab-text">Completez 1</span></a></li>
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir8"><span
+								class="fas fa-play"></span><span class="tab-text">Completez 2</span></a></li>
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir9"><span
+								class="fas fa-play"></span><span class="tab-text">Corrección</span></a></li>
+				</ul>
+
+				<ul class="buttonsRegresar">
+					<li><a onclick="document.getElementById('clicsRegresar').play()" href="#button1"><span
+								class="fas fa-undo"></span><span class="tab-text">Regresar</span></a></li>
+				</ul>
+			</article>
+
+			<!-- COMIENZA SECCIONES TAB DE NAVEGACIÓN DE MENU - TEORIA - OPERACIONES------------ -->
+
+			<!-- SECCION UNIÓN----------------------------------------- -->
+			<article id="buttonO1">
+				<h1>Unión (α + β)</h1>
+
+				<p>
+					Si α y β son dos expresiones regulares, α + β denota la unión entre ellas, que se lee como α
+					ó β. Es decir, dos posibles caminos a elegir: se toma uno, o bien, se toma el otro.
+				</p>
+				<h4 align="center">
+					α + β --> el símbolo + indica 2 caminos: <br>
+					O tomo el α, o bien, tomo el β. <br>
+					Sólo 1 a la vez.
+				</h4>
+				<br>
+				<ul class="buttonsAnimaciones">
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir1"><span
+								class="fas fa-play"></span><span class="tab-text">ER Unidas</span></a></li>
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir2"><span
+								class="fas fa-play"></span><span class="tab-text">ER con Unión</span></a></li>
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir3"><span
+								class="fas fa-play"></span><span class="tab-text">ER sin Unión</span></a></li>
+				</ul>
+				<ul class="buttonsRegresar">
+					<li><a onclick="document.getElementById('clicsRegresar').play()" href="#buttonT1"><span
+								class="fa fa-undo"></span><span class="tab-text">Regresar</span></a></li>
+				</ul>
+			</article>
+
+			<!-- SECCION CONCATENACIÓN----------------------------------------- -->
+			<article id="buttonO2">
+				<h1>Concatenación (αβ)</h1>
+				<p>
+					Si α y β son 2 expresiones regulares, αβ y α.β denota la concatenación de ellas. Es decir, la
+					concatenación se representa comúnmente escribiendo la primera (α) seguida de la segunda
+					(β) y, opcionalmente, puede haber un punto entre ellas.
+				</p>
+				<h4 align="center">
+					{α β} = {α} {β}= {α } . {β}
+				</h4>
+				<br>
+				<ul class="buttonsAnimaciones">
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir4"><span
+								class="fas fa-play"></span><span class="tab-text">ER Concatenadas</span></a></li>
+				</ul>
+				<ul class="buttonsRegresar">
+					<li><a onclick="document.getElementById('clicsRegresar').play()" href="#buttonT1"><span
+								class="fas fa-undo"></span><span class="tab-text">Regresar</span></a></li>
+				</ul>
+			</article>
+
+			<!-- SECCION CIERRE DE ESTRELLA----------------------------------------- -->
+			<article id="buttonO3">
+				<h1>Cierre de estrella (α*)</h1>
+				<p>
+					La expresión α* equivale a la existencia de un ciclo opcional en la expresión α. Esto
+					significa que la expresión α puede concatenarse (repetirse) cualquier cantidad de veces, ya
+					sea 0, 1, 2, … repeticiones, generando así las palabras: <b>α*={ λ, α, αα, ααα, αααα, ...}</b>
+				</p>
+				<p>
+					<b>Nota:</b> Con cero repeticiones de cualquier expresión se genera la palabra vacía, la cual se
+					puede representar con λ o Ɛ.
+				</p>
+				<ul class="buttonsAnimaciones">
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir5"><span
+								class="fas fa-play"></span><span class="tab-text">Cierre de Estrella</span></a></li>
+				</ul>
+				<ul class="buttonsRegresar">
+					<li><a onclick="document.getElementById('clicsRegresar').play()" href="#buttonT1"><span
+								class="fas fa-undo"></span><span class="tab-text">Regresar</span></a></li>
+				</ul>
+			</article>
+
+			<article id="ejemplosER">
+				<h1>Animaciones ER</h1>
+				<p>Con estos ejercicios de ejemplo a través de animaciones podrás comprender mejor lo visto en la
+					sección de <b>Teoría</b></p>
+				<br>
+				<ul class="buttonsAnimaciones">
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir10"><span
+								class="fas fa-play"></span><span class="tab-text">Ejemplo 1</span></a></li>
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir11"><span
+								class="fas fa-play"></span><span class="tab-text">Ejemplo 2</span></a></li>
+				</ul>
+				<br>
+				<ul class="buttonsAnimaciones">
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir12"><span
+								class="fas fa-play"></span><span class="tab-text">Ejemplo 3</span></a></li>
+					<li><a onclick="document.getElementById('clicsAnimaciones').play()" href="#" id="abrir13"><span
+								class="fas fa-play"></span><span class="tab-text">Ejemplo 4</span></a></li>
+				</ul>
+				<br>
+				<ul class="buttonsRegresar">
+					<li><a onclick="document.getElementById('clicsRegresar').play()" href="#button2"><span
+								class="fas fa-undo"></span><span class="tab-text">Regresar</span></a></li>
+				</ul>
+			</article>
+
+			<!-- CONTENDEDORES DE ANIMACIONES------------------------------------------------------ -->
+
+			<!-- INICIA SECCIONES DE ANIMACIONES DE OPERACIONES - UNION-------------------------------------- -->
+
+			<div id="modalUnion1" class="modal">
+				<div class="flex" id="flex1">
+					<div class="contenido-modal">
+						<center>
+							<div class="modal-header flex">
+								<h2>Expresiones Regulares - Unión</h2>
+								<span class="close" id="close1">&times;</span>
+							</div>
+						</center>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="800" height="450"
+									src="https://www.youtube-nocookie.com/embed/q0sbhKkua8w?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="Dos caminos" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="modalUnion2" class="modal">
+				<div class="flex" id="flex2">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Expresiones Con Unión</h2>
+							<span class="close" id="close2">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/8UbQpavmcIo?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="modalUnion3" class="modal">
+				<div class="flex" id="flex3">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Expresiones Sin Unión</h2>
+							<span class="close" id="close3">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/xLve6wCFPzQ?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- INICIA SECCIONES DE ANIMACIONES DE OPERACIONES - CONCATENACIÓN-------------------------------------- -->
+
+			<div id="modalConcatenacion" class="modal">
+				<div class="flex" id="flex4">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Expresiones Concatenadas</h2>
+							<span class="close" id="close4">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/A4rbxbpjfJk?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- INICIA SECCIONES DE ANIMACIONES DE OPERACIONES - CIERRE DE ESTRELLA-------------------------------------- -->
+
+			<div id="modalCierreEstrella" class="modal">
+				<div class="flex" id="flex5">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Expresiones - Cierre de Estrella</h2>
+							<span class="close" id="close5">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/0CY6AIFJcgg?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- INICIA SECCIONES DE ANIMACIONES DE PROCEDENCIA-------------------------------------- -->
+
+			<div id="modalPrecedencia" class="modal">
+				<div class="flex" id="flex6">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Expresiones - Precedencia de Operadores</h2>
+							<span class="close" id="close6">&times;</span>
+						</div>
+
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/x82ugnK7eOw?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- INICIA SECCIONES DE ANIMACIONES DE CONDICIONES-------------------------------------- -->
+
+			<div id="modalCompletez1" class="modal">
+				<div class="flex" id="flex7">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Expresión No Cumple Completez</h2>
+							<span class="close" id="close7">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/Ymub6Ww3l4M?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="modalCompletez2" class="modal">
+				<div class="flex" id="flex8">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Expresión Cumple Completez</h2>
+							<span class="close" id="close8">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/IyJJ9vGSUd4?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="modalCorreccion" class="modal">
+				<div class="flex" id="flex9">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Condición: Corrección</h2>
+							<span class="close" id="close9">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/_4A1nEPejpQ?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="modalEjemplo1" class="modal">
+				<div class="flex" id="flex10">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Animaciones ER - Ejemplo 1</h2>
+							<span class="close" id="close10">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/_xcncKYDxLY?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="modalEjemplo2" class="modal">
+				<div class="flex" id="flex11">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Animaciones ER - Ejemplo 2</h2>
+							<span class="close" id="close11">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/AEjOPkXiDtI?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="modalEjemplo3" class="modal">
+				<div class="flex" id="flex12">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Animaciones ER - Ejemplo 3</h2>
+							<span class="close" id="close12">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/BHYmYk7jb0o?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="modalEjemplo4" class="modal">
+				<div class="flex" id="flex13">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Animaciones ER - Ejemplo 4</h2>
+							<span class="close" id="close13">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive">
+								<iframe width="560" height="315"
+									src="https://www.youtube-nocookie.com/embed/ROKhjdysfnE?autoplay=0&modestbranding=1&iv_load_policy=3&rel=0"
+									title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="footer">
+							<h3>Derechos Reservados &copy;</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- MODAL PARA LOS EJEMPLOS-->
+
+			<div id="modalGenerador" class="modal">
+				<div class="flex" id="flexGenerador">
+					<div class="contenido-modal">
+						<div class="modal-header flex">
+							<h2>Animaciones ER - Generador</h2>
+							<span class="close" id="closeGenerador">&times;</span>
+						</div>
+						<div class="modal-body">
+							<div class="video-responsive" id="recursoVideo">
+								<!--Se cambia de video por cada inner-->
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- INICIA SECCIONES DE EJEMPLOS-------------------------------------- -->
+
+			<article id="alfabeto0">
+				<h1>Generador de Expresiones</h1>
+				<h1>S= {a,b}</h1>
+
+				<ul class="buttonGALF">
+					<li><a onclick="document.getElementById('clicsMenu').play();ocultarABC1();ocultarABC2();ocultarABC3();ocultarABC4();mostrarABC();"
+							href="#alfabeto1"><span class="tab-text">Generar Alfabeto</span></a></li>
+				</ul>
+
+				<div id="palabrasAceptadasAB" style="display: block">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarAB();mostrarAB1();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>------------------------ ER = a*b* ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A0E1A1"><span class="fas fa-play"></span></a>
+								</td>
+								<td><b>a</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E1R1"><span class="fas fa-play"></span></a>
+								</td>
+								<td><b>aaba</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A0E1A2"><span class="fas fa-play"></span></a>
+								</td>
+								<td><b>aaaa</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E1R2"><span class="fas fa-play"></span></a>
+								</td>
+								<td><b>ba</b></td>
+							</tr>
+							<tr>
+
+								<td>
+									<a class="example-btn" href="#" id="A0E1A3"><span class="fas fa-play"></span></a>
+								</td>
+								<td><b>aabb</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E1R3"><span class="fas fa-play"></span></a>
+								</td>
+								<td><b>bbba</b></td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="palabrasAceptadasAB1" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarAB1();mostrarAB2();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>------------------------ ER = a*b*(ab) ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A0E2A1"><span class="fas fa-play"></span></a>
+								</td>
+								<td><b>aaaab</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E2R1"><span class="fas fa-play"></span></a>
+								</td>
+								<td><b>ababa</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A0E2A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aabbab</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E2R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abbbba</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A0E2A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>ab</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E2R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>ba</b></td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="palabrasAceptadasAB2" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarAB2();mostrarAB3();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>------------------------ ER = (ba + ab)*a ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A0E3A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>a</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E3R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaaba</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A0E3A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>ababa</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E3R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abaab</b></td>
+							</tr>
+							<tr>
+
+								<td>
+									<a class="example-btn" href="#" id="A0E3A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>baaba</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E3R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>baaa</b></td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="palabrasAceptadasAB3" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarAB3();mostrarAB4();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>------------------------ ER = a*(b+a)* ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A0E4A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaaa</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E4R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaabc</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A0E4A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abbbbb</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E4R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abcd</b></td>
+							</tr>
+							<tr>
+
+								<td>
+									<a class="example-btn" href="#" id="A0E4A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>Ɛ</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E4R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>adbb</b></td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="palabrasAceptadasAB4" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarAB4();mostrarAB();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>------------------------ ER = (a+b)aab* ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A0E5A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaa</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E5R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aa</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A0E5A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaabbbb</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E5R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaaab</b></td>
+							</tr>
+							<tr>
+
+								<td>
+									<a class="example-btn" href="#" id="A0E5A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>baa</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A0E5R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abbbb</b></td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</article>
+
+			<article id="alfabeto1">
+				<h1>Generador de Expresiones</h1>
+				<h1>S= {a,b,c}</h1>
+
+				<ul class="buttonGALF">
+					<li><a onclick="document.getElementById('clicsMenu').play();ocultarABCD1();ocultarABCD2();ocultarABCD3();ocultarABCD4();mostrarABCD();"
+							href="#alfabeto2"><span class="tab-text">Generar Alfabeto</span></a></li>
+				</ul>
+
+				<div id="palabrasAceptadasABC" style="display: block">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarABC();mostrarABC1();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>---------------------- ER = (a+b)b*a+c* ----------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E1A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aa</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E1R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abc</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E1A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abbbbbba</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E1R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>acccc</b></td>
+							</tr>
+							<tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E1A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bbba</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E1R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bcc</b></td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div> <!--Good-->
+
+				<div id="palabrasAceptadasABC1" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarABC1();mostrarABC2();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>------------------------ ER = (a+b)b*(b+c)c ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E2A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abbcc</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E2R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaaacccbbb</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E2A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abc</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E2R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aabbcc</b></td>
+							</tr>
+							<tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E2A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bbbbbc</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E2R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abbbac</b></td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="palabrasAceptadasABC2" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarABC2();mostrarABC3();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>------------------------ ER = ab*c ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E3A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abbbbbc</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E3R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>baaac</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E3A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abc</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E3R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bcaa</b></td>
+							</tr>
+							<tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E3A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>ac</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E3R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>caaab</b></td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="palabrasAceptadasABC3" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarABC3();mostrarABC4();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>------------------------ ER = (aa)*b(ab)c* ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E4A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aabab</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E4R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaaaab</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E4A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bab</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E4R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaababc</b></td>
+							</tr>
+							<tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E4A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>babcccc</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E4R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>baac</b></td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="palabrasAceptadasABC4" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarABC4();mostrarABC();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>------------------------ ER = a*(a+b)c* ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E5A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>a</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E5R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaabc</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E5A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaaac</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E5R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aabbcc</b></td>
+							</tr>
+							<tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A1E5A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>b</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A1E5R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bca</b></td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</article>
+
+			<article id="alfabeto2">
+				<h1>Generador de Expresiones</h1>
+				<h1>S= {a,b,c,d}</h1>
+
+				<ul class="buttonGALF ">
+					<li><a onclick="document.getElementById('clicsMenu').play();ocultarAB1();ocultarAB2();ocultarAB3();ocultarAB4();mostrarAB();"
+							href="#alfabeto0"><span class="tab-text">Generar Alfabeto</span></a></li>
+				</ul>
+
+				<div id="palabrasAceptadasABCD" style="display: block">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarABCD();mostrarABCD1();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>------------------- ER = (ab)*(c+d)d* -------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E1A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>ababdddd</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E1R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abccd</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E1A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abcd</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E1R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>acccddd</b></td>
+							</tr>
+							<tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E1A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>c</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E1R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bacd</b></td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="palabrasAceptadasABCD1" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarABCD1();mostrarABCD2();"><span class="tab-text">Generar ER</span></a>
+						</li>
+					</ul>
+					<h5>------------------------ ER = a*b(b+c)d* ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E2A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aaabcdddd</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E2R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abbbd</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E2A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bbd</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E2R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bbbc</b></td>
+							</tr>
+							<tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E2A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bc</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E2R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>cddddd</b></td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="palabrasAceptadasABCD2" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarABCD2();mostrarABCD3();"><span class="tab-text">Generar ER</span></a>
+						</li>
+					</ul>
+					<h5>------------------------ ER = ab*cd* ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E3A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abc</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E3R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aabccd</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E3A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>ac</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E3R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abdddb</b></td>
+							</tr>
+
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E3A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>acddd</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E3R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bcd</b></td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="palabrasAceptadasABCD3" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarABCD3();mostrarABCD4();"><span class="tab-text">Generar ER</span></a>
+						</li>
+					</ul>
+					<h5>------------------------ ER = (a+b)c*(cd) ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E4A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>accccd</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E4R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>accdc</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E4A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>acd</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E4R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>ccccd</b></td>
+							</tr>
+							<tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E4A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bcccd</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E4R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>cd</b></td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="palabrasAceptadasABCD4" style="display: none">
+					<ul class="buttonMostrarER">
+						<li><a onclick="ocultarABCD4();mostrarABCD();"><span class="tab-text">Generar ER</span></a></li>
+					</ul>
+					<h5>------------------------ ER = a*bcd* ------------------------</h5>
+					<table class="content-table">
+						<colgroup>
+							<colgroup span="2">
+								<colgroup span="2">
+								<thead>
+							<tr>
+								<th colspan="2">Aceptadas</th>
+								<th colspan="2">Rechazadas</th>
+							</tr>
+							</thead>
+						<tr>
+							<th>Animación</th>
+							<th>Palabra</th>
+							<th>Animación</th>
+							<th>Palabra</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E5A1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abc</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E5R1"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>aacb</b></td>
+							</tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E5A2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bc</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E5R2"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>abcccd</b></td>
+							</tr>
+							<tr>
+							<tr>
+								<td>
+									<a class="example-btn" href="#" id="A2E5A3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>bcddd</b></td>
+								<td>
+									<a class="example-btn" href="#" id="A2E5R3"><span class="fas fa-play"></span><span
+											class="tab-text"></a>
+								</td>
+								<td><b>cbddd</b></td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</article>
+
+		</div>
+	</div>
+	<script src="js/scriptGenerador.js"></script>
+	<script src="js/scriptModals.js"></script>
+	<script src="js/scriptControlGIF.js"></script>
+	<script src="js/questions.js"></script>
+	<script src="js/scriptQuestions.js"></script>
+	<script src="js/scriptEvaluacion.js" async defer></script>
+</body>
+
+</html>
